@@ -281,15 +281,18 @@
     position: absolute; inset: 0;
     transition: transform 0.6s ease;
   }
+  .project-bg::after {
+    content: '';
+    position: absolute; inset: 0;
+    background: linear-gradient(to top, rgba(30,24,20,0.6) 0%, rgba(30,24,20,0.15) 50%, transparent 100%);
+  }
   .project-card:hover .project-bg { transform: scale(1.04); }
 
   /* Project 1 – Camp */
   .proj1 .project-bg {
-    background:
-     <img src="photos/CampOverview.png" alt="Full">
-      radial-gradient(ellipse at 30% 60%, rgba(92,122,78,0.4) 0%, transparent 55%),
-      radial-gradient(ellipse at 80% 20%, rgba(138,158,123,0.3) 0%, transparent 45%),
-      linear-gradient(160deg, #4a6741 0%, #7a9b6d 40%, #c4d4ba 100%);
+    background-image: url('Camp3.png');
+    background-size: cover;
+    background-position: center;
   }
   /* Project 2 – Residential */
   .proj2 .project-bg {
@@ -299,9 +302,9 @@
   }
   /* Project 3 – Competition */
   .proj3 .project-bg {
-    background:
-      radial-gradient(ellipse at 50% 70%, rgba(61,53,48,0.3) 0%, transparent 55%),
-      linear-gradient(180deg, #6b8f5e 0%, #a3bb96 50%, #d4dfc9 100%);
+    background-image: url('Garden1.png');
+    background-size: cover;
+    background-position: center;
   }
 
   /* SVG pattern overlay on each card */
@@ -609,7 +612,7 @@
       living space
     </h1>
     <p class="hero-sub">
-      Thoughtful, site-responsive design that balances ecology, function, and beauty — from intimate residential gardens to larger institutional landscapes.
+      Thoughtful, site-responsive design that balances function, aesthetics, and purpose — creating spaces that change the way you engage with your own home.
     </p>
     <div class="hero-cta">
       <a href="#portfolio" class="btn-primary">View Portfolio</a>
@@ -620,9 +623,8 @@
     <div class="hero-catchphrase-panel">
       <p class="catchphrase-eyebrow">Design philosophy</p>
       <h2 class="catchphrase-text">
-        Landscapes designed to be<br>
-        as <span class="catchphrase-bold-word">BOLD</span><br>
-        as the land allows.
+        Landscape design as <span class="catchphrase-bold-word">BOLD</span><br>
+        as you imagined.
       </h2>
       <div class="catchphrase-rule"></div>
     </div>
@@ -727,10 +729,10 @@
     <p class="section-label">About</p>
     <h2 class="section-title">Design with<br><em>intention</em></h2>
     <p class="about-bio">
-      I'm Ben Orbach, an independent landscape designer and Bachelor of Landscape Architecture candidate. My practice, BOLD, is rooted in the belief that good design begins with deep listening — to the land, the ecology, and the people who inhabit a space.
+      I'm Ben Orbach, an independent landscape designer and Bachelor of Landscape Architecture candidate at the University of Guelph. Based out of Toronto, I'm building BOLD, focused on designing with a unique and fresh perspective.
     </p>
     <p class="about-bio">
-      I work across scales, from intimate residential gardens to larger community landscapes, bringing careful site analysis, ecological thinking, and a sensitivity to craft and material to every project.
+      I believe each landscape is part of something bigger, interacting with your home, neighborhood, or city, but always people. User-centric and site-cohesive design are at the forefront of my work and I look forward to helping you bring your BOLD vision to life.
     </p>
     <div class="about-credentials">
       <div class="credential">
@@ -739,7 +741,11 @@
       </div>
       <div class="credential">
         <span class="credential-label">Status</span>
-        <span class="credential-value">BLA Candidate</span>
+        <span class="credential-value">BLA Candidate — University of Guelph</span>
+      </div>
+      <div class="credential">
+        <span class="credential-label">Based</span>
+        <span class="credential-value">Toronto, ON</span>
       </div>
       <div class="credential">
         <span class="credential-label">Practice</span>
@@ -762,11 +768,19 @@
     <div class="contact-detail">
       <div class="contact-item">
         <span class="contact-item-label">Email</span>
-        <a href="mailto:ben@boldlandscape.ca" class="contact-item-value">ben@boldlandscape.ca</a>
+        <a href="mailto:orbach.benz@gmail.com" class="contact-item-value">orbach.benz@gmail.com</a>
+      </div>
+      <div class="contact-item">
+        <span class="contact-item-label">Phone</span>
+        <a href="tel:6475286746" class="contact-item-value">647-528-6746</a>
+      </div>
+      <div class="contact-item">
+        <span class="contact-item-label">LinkedIn</span>
+        <a href="https://www.linkedin.com/in/ben-orbach" target="_blank" class="contact-item-value">Ben Orbach</a>
       </div>
       <div class="contact-item">
         <span class="contact-item-label">Based</span>
-        <span class="contact-item-value">Canada</span>
+        <span class="contact-item-value">Toronto, ON</span>
       </div>
       <div class="contact-item">
         <span class="contact-item-label">Practice</span>
