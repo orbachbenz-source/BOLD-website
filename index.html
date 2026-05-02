@@ -154,6 +154,7 @@
   .btn-secondary:hover { color: var(--accent); }
   .btn-secondary:hover::after { transform: translateX(4px); }
 
+  /* ── HERO RIGHT with Sketch1 ── */
   .hero-right {
     position: relative;
     background: var(--stone);
@@ -161,21 +162,47 @@
     opacity: 0;
     animation: fadeIn 1.2s 0.3s forwards;
     display: flex;
-    align-items: center;
+    align-items: flex-end;
     justify-content: center;
   }
 
-  .hero-catchphrase-panel {
-    position: absolute; inset: 0;
+  /* Sketch1 sits in the lower half, fading upward into stone */
+  .hero-sketch-img {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 55%;
+    background-image: url('Sketch1.png');
+    background-size: cover;
+    background-position: center top;
+    -webkit-mask-image: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.5) 30%, black 100%);
+    mask-image: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.5) 30%, black 100%);
+    opacity: 0.38;
+  }
+
+  /* Green tint wash to blend sketch into accent palette */
+  .hero-sketch-tint {
+    position: absolute;
+    inset: 0;
     background:
-      radial-gradient(ellipse at 30% 70%, rgba(92,122,78,0.18) 0%, transparent 60%),
-      radial-gradient(ellipse at 80% 20%, rgba(138,158,123,0.12) 0%, transparent 50%),
-      var(--stone);
+      radial-gradient(ellipse at 30% 80%, rgba(92,122,78,0.45) 0%, transparent 65%),
+      radial-gradient(ellipse at 80% 20%, rgba(138,158,123,0.18) 0%, transparent 50%);
+    pointer-events: none;
+  }
+
+  .hero-catchphrase-panel {
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 52%;
+    background: linear-gradient(to bottom,
+      var(--stone) 0%,
+      var(--stone) 60%,
+      transparent 100%);
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
-    padding: 4rem;
+    padding: 3rem 4rem 1rem;
+    z-index: 2;
   }
 
   .catchphrase-eyebrow {
@@ -183,16 +210,16 @@
     letter-spacing: 0.25em;
     text-transform: uppercase;
     color: var(--sage);
-    margin-bottom: 1.8rem;
+    margin-bottom: 1.4rem;
   }
 
   .catchphrase-text {
     font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(2.4rem, 3.8vw, 3.6rem);
+    font-size: clamp(2rem, 3.2vw, 3.2rem);
     font-weight: 300;
     line-height: 1.15;
     color: var(--bark);
-    margin-bottom: 2.5rem;
+    margin-bottom: 2rem;
   }
 
   .catchphrase-text .catchphrase-bold-word {
@@ -225,6 +252,7 @@
 
   /* ─── SECTION SHARED ─── */
   section { padding: 7rem 4rem; }
+
   .section-label {
     font-size: 0.7rem;
     letter-spacing: 0.22em;
@@ -288,26 +316,22 @@
   }
   .project-card:hover .project-bg { transform: scale(1.04); }
 
-  /* Project 1 – Camp */
   .proj1 .project-bg {
     background-image: url('Camp3.png');
     background-size: cover;
     background-position: center;
   }
-  /* Project 2 – Residential */
   .proj2 .project-bg {
-     background-image: url('Cottage4.png');
+    background-image: url('Cottage2.png');
     background-size: cover;
     background-position: center;
   }
-  /* Project 3 – Competition */
   .proj3 .project-bg {
     background-image: url('Garden1.png');
     background-size: cover;
     background-position: center;
   }
 
-  /* SVG pattern overlay on each card */
   .project-pattern {
     position: absolute; inset: 0;
     opacity: 0.12;
@@ -343,10 +367,8 @@
     letter-spacing: 0.1em;
   }
 
-  /* Card is now an <a> — strip link styling */
   a.project-card { text-decoration: none; display: block; }
 
-  /* Hover CTA badge */
   .project-cta {
     position: absolute; top: 1.5rem; right: 1.5rem;
     font-size: 0.62rem; letter-spacing: 0.14em; text-transform: uppercase;
@@ -359,7 +381,6 @@
   }
   .project-card:hover .project-cta { opacity: 1; transform: translateY(0); }
 
-  /* Always-visible label at top */
   .project-label {
     position: absolute; top: 1.5rem; left: 1.5rem;
     font-size: 0.65rem;
@@ -371,7 +392,7 @@
     padding: 0.35rem 0.75rem;
   }
 
-  /* ─── ABOUT ─── */
+  /* ─── ABOUT with Sketch2 + Sketch3 ─── */
   #about {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -382,32 +403,64 @@
   .about-visual {
     position: relative;
     height: 520px;
-    background: var(--stone);
     overflow: hidden;
+    background: var(--stone);
   }
 
+  /* Green radial wash */
   .about-bg {
     position: absolute; inset: 0;
     background:
-      radial-gradient(ellipse at 40% 60%, rgba(92,122,78,0.3) 0%, transparent 60%),
+      radial-gradient(ellipse at 40% 60%, rgba(92,122,78,0.28) 0%, transparent 65%),
       var(--stone);
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  /* Sketch2 — top half, fades out downward */
+  .about-sketch-top {
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 52%;
+    background-image: url('Sketch2.png');
+    background-size: cover;
+    background-position: center;
+    -webkit-mask-image: linear-gradient(to bottom, black 0%, black 55%, transparent 100%);
+    mask-image: linear-gradient(to bottom, black 0%, black 55%, transparent 100%);
+    opacity: 0.32;
+    z-index: 0;
+  }
+
+  /* Sketch3 — bottom half, fades out upward */
+  .about-sketch-bottom {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 52%;
+    background-image: url('Sketch3.png');
+    background-size: cover;
+    background-position: center;
+    -webkit-mask-image: linear-gradient(to top, black 0%, black 55%, transparent 100%);
+    mask-image: linear-gradient(to top, black 0%, black 55%, transparent 100%);
+    opacity: 0.32;
+    z-index: 0;
   }
 
   .about-accent-line {
     position: absolute; top: 3rem; left: -1px;
     width: 3px; height: 5rem;
     background: var(--accent);
+    z-index: 2;
   }
 
-  .about-initials {
-    position: absolute; bottom: 2rem; right: 2rem;
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 7rem;
-    font-weight: 300;
-    color: rgba(92,122,78,0.15);
-    line-height: 1;
-    letter-spacing: -0.02em;
-    user-select: none;
+  /* Fade left edge and bottom into page */
+  .about-visual::after {
+    content: '';
+    position: absolute; inset: 0;
+    background:
+      linear-gradient(to right, var(--white) 0%, transparent 18%),
+      linear-gradient(to bottom, transparent 70%, var(--white) 100%);
+    z-index: 3;
+    pointer-events: none;
   }
 
   .about-content { padding-right: 2rem; }
@@ -575,7 +628,7 @@
     .nav-links { gap: 1.8rem; }
     #home { grid-template-columns: 1fr; min-height: auto; }
     .hero-left { padding: 8rem 2rem 4rem; }
-    .hero-right { height: 45vw; min-height: 280px; }
+    .hero-right { height: 55vw; min-height: 320px; }
     section { padding: 5rem 2rem; }
     .portfolio-grid { grid-template-columns: 1fr; }
     .project-card:first-child { grid-column: span 1; }
@@ -620,6 +673,8 @@
     </div>
   </div>
   <div class="hero-right">
+    <div class="hero-sketch-img"></div>
+    <div class="hero-sketch-tint"></div>
     <div class="hero-catchphrase-panel">
       <p class="catchphrase-eyebrow">Design philosophy</p>
       <h2 class="catchphrase-text">
@@ -628,7 +683,6 @@
       </h2>
       <div class="catchphrase-rule"></div>
     </div>
-    
   </div>
 </section>
 
@@ -712,17 +766,10 @@
 <!-- ABOUT -->
 <section id="about">
   <div class="about-visual reveal">
+    <div class="about-sketch-top"></div>
+    <div class="about-sketch-bottom"></div>
     <div class="about-bg"></div>
     <div class="about-accent-line"></div>
-    <svg style="position:absolute;inset:0;width:100%;height:100%;opacity:0.07" viewBox="0 0 400 520" xmlns="http://www.w3.org/2000/svg" fill="none">
-      <!-- Topographic-style lines -->
-      <ellipse cx="200" cy="260" rx="180" ry="120" stroke="#3D3530" stroke-width="1"/>
-      <ellipse cx="200" cy="260" rx="140" ry="90" stroke="#3D3530" stroke-width="1"/>
-      <ellipse cx="200" cy="260" rx="100" ry="62" stroke="#3D3530" stroke-width="1"/>
-      <ellipse cx="200" cy="260" rx="65" ry="38" stroke="#3D3530" stroke-width="1"/>
-      <ellipse cx="200" cy="260" rx="32" ry="18" stroke="#3D3530" stroke-width="1"/>
-    </svg>
-    <div class="about-initials">BO</div>
   </div>
 
   <div class="about-content reveal">
@@ -747,7 +794,6 @@
         <span class="credential-label">Based</span>
         <span class="credential-value">Toronto, ON</span>
       </div>
-     
     </div>
   </div>
 </section>
