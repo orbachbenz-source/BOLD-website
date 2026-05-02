@@ -407,49 +407,48 @@
     background: var(--stone);
   }
 
-  /* Green radial wash */
-  .about-bg {
-    position: absolute; inset: 0;
-    background:
-      radial-gradient(ellipse at 40% 60%, rgba(92,122,78,0.28) 0%, transparent 65%),
-      var(--stone);
-    z-index: 1;
-    pointer-events: none;
-  }
-
   /* Sketch2 — top half, fades out downward */
   .about-sketch-top {
     position: absolute;
     top: 0; left: 0; right: 0;
-    height: 52%;
+    height: 55%;
     background-image: url('Sketch2.png');
     background-size: cover;
     background-position: center;
-    -webkit-mask-image: linear-gradient(to bottom, black 0%, black 55%, transparent 100%);
-    mask-image: linear-gradient(to bottom, black 0%, black 55%, transparent 100%);
-    opacity: 0.32;
-    z-index: 0;
+    -webkit-mask-image: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.5) 25%, black 55%, transparent 100%);
+    mask-image: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.5) 25%, black 55%, transparent 100%);
+    opacity: 0.38;
+    z-index: 1;
   }
 
   /* Sketch3 — bottom half, fades out upward */
   .about-sketch-bottom {
     position: absolute;
     bottom: 0; left: 0; right: 0;
-    height: 52%;
+    height: 55%;
     background-image: url('Sketch3.png');
     background-size: cover;
     background-position: center;
-    -webkit-mask-image: linear-gradient(to top, black 0%, black 55%, transparent 100%);
-    mask-image: linear-gradient(to top, black 0%, black 55%, transparent 100%);
-    opacity: 0.32;
-    z-index: 0;
+    -webkit-mask-image: linear-gradient(to top, transparent 0%, rgba(0,0,0,0.5) 25%, black 55%, transparent 100%);
+    mask-image: linear-gradient(to top, transparent 0%, rgba(0,0,0,0.5) 25%, black 55%, transparent 100%);
+    opacity: 0.38;
+    z-index: 1;
+  }
+
+  /* Green tint wash — sits above sketches, same approach as hero-sketch-tint */
+  .about-bg {
+    position: absolute; inset: 0;
+    background:
+      radial-gradient(ellipse at 40% 60%, rgba(92,122,78,0.28) 0%, transparent 65%);
+    z-index: 2;
+    pointer-events: none;
   }
 
   .about-accent-line {
     position: absolute; top: 3rem; left: -1px;
     width: 3px; height: 5rem;
     background: var(--accent);
-    z-index: 2;
+    z-index: 4;
   }
 
   /* Fade left edge and bottom into page */
