@@ -305,10 +305,8 @@
     overflow: hidden;
   }
   .project-card:first-child .project-visual { height: 380px; }
-  .proj2 { align-self: stretch; }
-  .proj2 .project-visual { height: 420px; }
-  .proj3 { align-self: start; }
-  .services-card { align-self: start; }
+  .project-card:nth-child(2) { align-self: stretch; }
+  .project-card:nth-child(2) .project-visual { height: 100%; }
 
   .project-bg {
     position: absolute; inset: 0;
@@ -752,8 +750,7 @@
     section { padding: 5rem 2rem; }
     .portfolio-grid { grid-template-columns: 1fr; }
     .project-card:first-child { grid-column: span 1; }
-    .project-visual { height: 280px; }
-    .proj2 .project-visual { height: 280px; }
+    .project-visual { height: 280px !important; }
     #about { grid-template-columns: 1fr; gap: 3rem; }
     .about-visual { height: 300px; }
     .about-content { padding-right: 0; }
@@ -863,7 +860,7 @@
     <a class="project-card proj3" href="project-competition.html">
       <div class="project-visual">
         <div class="project-bg"></div>
-        <svg class="project-pattern" viewBox="0 0 600 420" xmlns="http://www.w3.org/2000/svg">
+        <svg class="project-pattern" viewBox="0 0 400 420" xmlns="http://www.w3.org/2000/svg">
           <polygon points="200,30 370,420 30,420" stroke="#fff" stroke-width="0.8" fill="none"/>
           <polygon points="200,100 320,380 80,380" stroke="#fff" stroke-width="0.8" fill="none"/>
           <polygon points="200,170 270,340 130,340" stroke="#fff" stroke-width="0.8" fill="none"/>
@@ -881,7 +878,7 @@
 
     <!-- Services Card -->
     <div class="services-card reveal">
-      <svg class="services-card-bg" viewBox="0 0 400 420" xmlns="http://www.w3.org/2000/svg">
+      <svg class="services-card-bg" viewBox="0 0 600 420" xmlns="http://www.w3.org/2000/svg">
         <rect x="20" y="20" width="560" height="380" rx="1" stroke="#3D3530" stroke-width="1" fill="none"/>
         <rect x="40" y="40" width="520" height="340" rx="1" stroke="#3D3530" stroke-width="0.5" fill="none"/>
         <line x1="20" y1="210" x2="580" y2="210" stroke="#3D3530" stroke-width="0.5"/>
